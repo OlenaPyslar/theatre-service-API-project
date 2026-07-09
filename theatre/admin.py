@@ -7,5 +7,13 @@ admin.site.register(Genre)
 admin.site.register(TheatreHall)
 admin.site.register(Play)
 admin.site.register(Performance)
-admin.site.register(Reservation)
-admin.site.register(Ticket)
+
+
+class TicketInLine(admin.TabularInline):
+   model = Ticket
+   extra = 1
+
+
+@admin.register(Reservation)
+class OrderAdmin(admin.ModelAdmin):
+   inlines = (TicketInLine,)
