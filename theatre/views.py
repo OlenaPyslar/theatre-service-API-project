@@ -21,7 +21,7 @@ class TheatreHallViewSet(viewsets.ModelViewSet):
     serializer_class = TheatreHallSerializer
 
 
-class PlayerViewSet(viewsets.ModelViewSet):
+class PlayViewSet(viewsets.ModelViewSet):
     queryset = Play.objects.all()
     serializer_class = PlayListSerializer
 
